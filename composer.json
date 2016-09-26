@@ -17,6 +17,8 @@
         "fxp/composer-asset-plugin": "*",
         "ext-gd": "*",
         "php": ">=5.4.0",
+        "fxp/composer-asset-plugin": "*",
+        "ext-gd": "*",
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
