@@ -78,3 +78,23 @@ return [
     ],
     'params' => $params,
 ];
+
+
+if (YII_ENV_DEV) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'generators' => [
+                //'crud' => ['class' => 'dee\gii\generators\crud\Generator'],
+                //'angular' => ['class' => 'dee\gii\generators\angular\Generator'],
+                //'mvc' => ['class' => 'dee\gii\generators\mvc\Generator'],
+                'migration' => ['class' => 'dee\gii\generators\migration\Generator'],
+            ],
+    ];
+}
