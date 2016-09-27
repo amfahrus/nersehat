@@ -21,7 +21,6 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.1.*', '192.168.0.*'] // adjust this to your needs
     ];
 
     $config['bootstrap'][] = 'gii';
@@ -33,7 +32,6 @@ if (YII_ENV_DEV) {
                 //'mvc' => ['class' => 'dee\gii\generators\mvc\Generator'],
                 'migration' => ['class' => 'dee\gii\generators\migration\Generator'],
             ],
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.1.*', '192.168.0.*'] // adjust this to your needs
     ];
 }
 
