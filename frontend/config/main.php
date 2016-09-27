@@ -13,6 +13,19 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'pgsql:host=ec2-54-221-244-62.compute-1.amazonaws.com;dbname=d5ia2sbqqgdrgo', 
+            'username' => 'eqpzrgalxrfpdq',
+            'password' => 'RM381ZBeCzJnpLeo5N0qBU5M9S',
+            'charset' => 'UTF8',
+            'schemaMap' => [
+              'pgsql'=> [
+                'class'=>'yii\db\pgsql\Schema',
+                'defaultSchema' => 'public' //specify your schema here
+              ]
+            ], // PostgreSQL
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],

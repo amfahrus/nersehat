@@ -1,18 +1,23 @@
 <?php
+
+$host = $username = $password = $dbname = '';
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+if (isset($url["host"]) && isset($url["user"]) && isset($url["pass"]) && isset($url["path"])) {
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $dbname = substr($url["path"], 1);
+}
+
 return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'pgsql:host=ec2-54-221-244-62.compute-1.amazonaws.com;dbname=d5ia2sbqqgdrgo', 
-            'username' => 'eqpzrgalxrfpdq',
-            'password' => 'RM381ZBeCzJnpLeo5N0qBU5M9S',
-            'charset' => 'UTF8',
-            'schemaMap' => [
-              'pgsql'=> [
-                'class'=>'yii\db\pgsql\Schema',
-                'defaultSchema' => 'public' //specify your schema here
-              ]
-            ], // PostgreSQL
+            'dsn' => 'mysql:host=' . $host . ';dbname=' . $dbname,
+            'username' => $username,
+            'password' => $password,
+            'charset' => 'utf8',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
