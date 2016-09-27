@@ -1,5 +1,6 @@
 {
     "require": {
+    	"fxp/composer-asset-plugin": "*",
         "ext-gd": "*"
     }
 }
