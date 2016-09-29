@@ -34,7 +34,7 @@ class Homecare extends \yii\db\ActiveRecord
         return [
             [['tanggal', 'jam', 'jenis_perawatan'], 'required'],
             [['tanggal'], 'safe'],
-            [['jam', 'jenis_perawatan', 'klinik', 'rumah_sakit'], 'string'],
+            [['jam', 'lokasi', 'jenis_perawatan'], 'string'],
             [['longitude', 'latitude'], 'number'],
         ];
     }
@@ -48,11 +48,10 @@ class Homecare extends \yii\db\ActiveRecord
             'hid' => 'Hid',
             'tanggal' => 'Tanggal',
             'jam' => 'Jam',
+            'lokasi' => 'Lokasi',
             'longitude' => 'Longitude',
             'latitude' => 'Latitude',
             'jenis_perawatan' => 'Jenis Perawatan',
-            'klinik' => 'Klinik',
-            'rumah_sakit' => 'Rumah Sakit',
         ];
     }
 }

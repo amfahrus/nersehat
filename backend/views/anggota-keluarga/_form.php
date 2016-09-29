@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\AnggotaKeluarga */
@@ -13,22 +12,13 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'kid')->dropdownList($keluarga) ?>
+    <?= $form->field($model, 'uid')->textInput() ?>
 
     <?= $form->field($model, 'nama_lengkap')->textInput() ?>
 
     <?= $form->field($model, 'tempat_lahir')->textInput() ?>
 
-    <?= $form->field($model, 'tanggal_lahir')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-             'inline' => false, 
-             // modify template for custom rendering
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
-            ]
-    ]);?>
+    <?= $form->field($model, 'tanggal_lahir')->textInput() ?>
 
     <?= $form->field($model, 'keluhan_sekarang')->textarea(['rows' => 6]) ?>
 

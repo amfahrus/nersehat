@@ -19,7 +19,7 @@ class HomecareSearch extends Homecare
     {
         return [
             [['hid'], 'integer'],
-            [['tanggal', 'jam', 'jenis_perawatan', 'klinik', 'rumah_sakit'], 'safe'],
+            [['tanggal', 'jam', 'jenis_perawatan', 'lokasi'], 'safe'],
             [['longitude', 'latitude'], 'number'],
         ];
     }
@@ -68,8 +68,7 @@ class HomecareSearch extends Homecare
 
         $query->andFilterWhere(['like', 'jam', $this->jam])
             ->andFilterWhere(['like', 'jenis_perawatan', $this->jenis_perawatan])
-            ->andFilterWhere(['like', 'klinik', $this->klinik])
-            ->andFilterWhere(['like', 'rumah_sakit', $this->rumah_sakit]);
+            ->andFilterWhere(['like', 'lokasi', $this->lokasi]);
 
         return $dataProvider;
     }

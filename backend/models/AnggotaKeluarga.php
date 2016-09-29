@@ -8,14 +8,14 @@ use Yii;
  * This is the model class for table "anggota_keluarga".
  *
  * @property integer $aid
- * @property integer $kid
+ * @property integer $uid
  * @property string $nama_lengkap
  * @property string $tempat_lahir
  * @property string $tanggal_lahir
  * @property string $keluhan_sekarang
  * @property string $catatan_perkembangan
  *
- * @property Keluarga $k
+ * @property User $u
  */
 class AnggotaKeluarga extends \yii\db\ActiveRecord
 {
@@ -33,11 +33,11 @@ class AnggotaKeluarga extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['kid'], 'integer'],
+            [['uid'], 'integer'],
             [['nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'required'],
             [['nama_lengkap', 'tempat_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'string'],
             [['tanggal_lahir'], 'safe'],
-            [['kid'], 'exist', 'skipOnError' => true, 'targetClass' => Keluarga::className(), 'targetAttribute' => ['kid' => 'kid']],
+            [['uid'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['uid' => 'id']],
         ];
     }
 
@@ -48,7 +48,7 @@ class AnggotaKeluarga extends \yii\db\ActiveRecord
     {
         return [
             'aid' => 'Aid',
-            'kid' => 'Keluarga',
+            'uid' => 'Uid',
             'nama_lengkap' => 'Nama Lengkap',
             'tempat_lahir' => 'Tempat Lahir',
             'tanggal_lahir' => 'Tanggal Lahir',
@@ -60,8 +60,8 @@ class AnggotaKeluarga extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getK()
+    public function getU()
     {
-        return $this->hasOne(Keluarga::className(), ['kid' => 'kid']);
+        return $this->hasOne(User::className(), ['id' => 'uid']);
     }
 }

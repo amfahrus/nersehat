@@ -18,7 +18,7 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
     public function rules()
     {
         return [
-            [['aid', 'kid'], 'integer'],
+            [['aid', 'uid'], 'integer'],
             [['nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'safe'],
         ];
     }
@@ -41,7 +41,8 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
      */
     public function search($params)
     {
-        $query = AnggotaKeluarga::find();
+        $user = Yii::$app->user->identity->id;
+        $query = AnggotaKeluarga::find()->where(['=','uid',$user]);
 
         // add conditions that should always apply here
 
@@ -60,7 +61,7 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
         // grid filtering conditions
         $query->andFilterWhere([
             'aid' => $this->aid,
-            'kid' => $this->kid,
+            'uid' => $this->uid,
             'tanggal_lahir' => $this->tanggal_lahir,
         ]);
 

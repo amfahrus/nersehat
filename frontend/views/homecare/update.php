@@ -19,3 +19,14 @@ $this->params['breadcrumbs'][] = 'Update';
     ]) ?>
 
 </div>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Klinik</button>
+</p>
+</div>
+<br>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Rumah Sakit</button>
+</p>
+</div>    

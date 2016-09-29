@@ -16,6 +16,15 @@ return [
 		'admin' => [
             'class' => 'mdm\admin\Module',
         ], 
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'generators' => [
+                //'crud' => ['class' => 'dee\gii\generators\crud\Generator'],
+                //'angular' => ['class' => 'dee\gii\generators\angular\Generator'],
+                //'mvc' => ['class' => 'dee\gii\generators\mvc\Generator'],
+                'migration' => ['class' => 'dee\gii\generators\migration\Generator'],
+            ],
+        ], 
     ],
     'components' => [
         'db' => [
@@ -23,6 +32,9 @@ return [
                 'dsn' => 'pgsql:host=ec2-54-221-244-62.compute-1.amazonaws.com;dbname=d5ia2sbqqgdrgo', 
                 'username' => 'eqpzrgalxrfpdq',
                 'password' => 'RM381ZBeCzJnpLeo5N0qBU5M9S',
+                /*'dsn' => 'pgsql:host=localhost;dbname=nersehat', 
+                'username' => 'postgres',
+                'password' => 'postgres',*/
                 'charset' => 'UTF8',
                 'schemaMap' => [
                   'pgsql'=> [

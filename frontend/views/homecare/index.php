@@ -24,13 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            'jenis_perawatan',
             'tanggal',
             'jam',
-            'longitude',
-            'latitude',
-            // 'jenis_perawatan',
-            // 'klinik',
-            // 'rumah_sakit',
+            'lokasi',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

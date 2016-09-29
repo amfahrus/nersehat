@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\PerawatJagaSearch;
 
 /**
  * Site controller
@@ -115,7 +116,14 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        return $this->render('contact');
+        $searchModelPerawat = new PerawatJagaSearch();
+        $dataProviderPerawat = $searchModelPerawat->search(Yii::$app->request->queryParams);
+        
+        return $this->render('contact', [
+            'searchModelPerawat' => $searchModelPerawat,
+            'dataProviderPerawat' => $dataProviderPerawat,
+        ]);
+        //return $this->render('contact');
     }
 
     /**

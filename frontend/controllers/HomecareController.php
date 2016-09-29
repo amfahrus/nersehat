@@ -33,7 +33,8 @@ class HomecareController extends Controller
      * Lists all Homecare models.
      * @return mixed
      */
-    public function actionIndex()
+    //public function actionIndex()
+    public function actionCreate()
     {
         $searchModel = new HomecareSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -61,7 +62,7 @@ class HomecareController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionIndex()
     {
         $model = new Homecare();
 

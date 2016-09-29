@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Homecare */
 
-$this->title = 'Create Homecare';
+$this->title = 'Reservasi dan Janji';
 $this->params['breadcrumbs'][] = ['label' => 'Homecares', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -19,3 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Klinik</button>
+</p>
+</div>
+<br>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Rumah Sakit</button>
+</p>
+</div>    

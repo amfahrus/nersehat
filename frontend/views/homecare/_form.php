@@ -12,29 +12,24 @@ use dosamigos\datepicker\DatePicker;
 <div class="homecare-form">
 
     <?php $form = ActiveForm::begin(); ?>
+    
+    <?= $form->field($model, 'jenis_perawatan')->dropdownList(['Perawatan Luka' => 'Perawatan Luka', 'Perawatan Paska Stroke' => 'Perawatan Paska Stroke', 'Perawatan Lansia' => 'Perawatan Lansia', 'Perawatan Kronis' => 'Perawatan Kronis']) ?>
 
     <?= $form->field($model, 'tanggal')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-             'inline' => false, 
-             // modify template for custom rendering
-            'clientOptions' => [
+          DatePicker::className(), [
+              'language' => 'en',
+              'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
+                'format' => 'yyyy-mm-dd',
+                'todayBtn' => true
             ]
-    ]);?>
+          ]
+        )
+    ?>
 
     <?= $form->field($model, 'jam')->textInput() ?>
 
-    <?= $form->field($model, 'longitude')->textInput() ?>
-
-    <?= $form->field($model, 'latitude')->textInput() ?>
-
-    <?= $form->field($model, 'jenis_perawatan')->textInput() ?>
-
-    <?= $form->field($model, 'klinik')->textInput() ?>
-
-    <?= $form->field($model, 'rumah_sakit')->textInput() ?>
+    <?= $form->field($model, 'lokasi')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -21,6 +21,18 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nama_perawat') ?>
 
+    <?= $form->field($model, 'nomor_hp') ?>
+
+    <?= $form->field($model, 'layanan') ?>
+
+    <?php // echo $form->field($model, 'agama') ?>
+
+    <?php // echo $form->field($model, 'jenis_kelamin') ?>
+
+    <?php // echo $form->field($model, 'penempatan') ?>
+
+    <?php // echo $form->field($model, 'jaga_hari_ini')->checkbox() ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

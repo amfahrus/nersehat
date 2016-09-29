@@ -28,15 +28,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'hid',
+            'jenis_perawatan',
             'tanggal',
             'jam',
-            'longitude',
-            'latitude',
-            'jenis_perawatan',
-            'klinik',
-            'rumah_sakit',
+            'lokasi',
         ],
     ]) ?>
 
 </div>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Klinik</button>
+</p>
+</div>
+<br>
+<div class="row">
+<p>
+    <button type="button" class="btn btn-primary btn-lg pull-right">Reservasi Rumah Sakit</button>
+</p>
+</div>    

@@ -13,26 +13,21 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'kid')->dropdownList($keluarga) ?>
-
     <?= $form->field($model, 'nama_lengkap')->textInput() ?>
 
     <?= $form->field($model, 'tempat_lahir')->textInput() ?>
 
     <?= $form->field($model, 'tanggal_lahir')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-             'inline' => false, 
-             // modify template for custom rendering
-            'clientOptions' => [
+          DatePicker::className(), [
+              'language' => 'en',
+              'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
+                'format' => 'yyyy-mm-dd',
+                'todayBtn' => true
             ]
-    ]);?>
-
-    <?= $form->field($model, 'keluhan_sekarang')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'catatan_perkembangan')->textarea(['rows' => 6]) ?>
+          ]
+        )
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

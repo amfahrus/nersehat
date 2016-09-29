@@ -15,11 +15,12 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
     /**
      * @inheritdoc
      */
+    public $u;
     public function rules()
     {
         return [
-            [['aid', 'kid'], 'integer'],
-            [['nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'safe'],
+            [['aid', 'uid'], 'integer'],
+            [['u','nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'safe'],
         ];
     }
 
@@ -43,11 +44,18 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
     {
         $query = AnggotaKeluarga::find();
 
+        $query->joinWith('u');
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['u'] = [
+            'asc'   => ['user.username' => SORT_ASC],
+            'desc'   => ['user.username' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -60,14 +68,15 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
         // grid filtering conditions
         $query->andFilterWhere([
             'aid' => $this->aid,
-            'kid' => $this->kid,
+            'uid' => $this->uid,
             'tanggal_lahir' => $this->tanggal_lahir,
         ]);
 
         $query->andFilterWhere(['like', 'nama_lengkap', $this->nama_lengkap])
             ->andFilterWhere(['like', 'tempat_lahir', $this->tempat_lahir])
             ->andFilterWhere(['like', 'keluhan_sekarang', $this->keluhan_sekarang])
-            ->andFilterWhere(['like', 'catatan_perkembangan', $this->catatan_perkembangan]);
+            ->andFilterWhere(['like', 'catatan_perkembangan', $this->catatan_perkembangan])
+            ->andFilterWhere(['like', 'user.username', $this->u]);
 
         return $dataProvider;
     }

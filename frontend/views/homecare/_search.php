@@ -27,10 +27,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'jenis_perawatan') ?>
 
-    <?php // echo $form->field($model, 'klinik') ?>
-
-    <?php // echo $form->field($model, 'rumah_sakit') ?>
-
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

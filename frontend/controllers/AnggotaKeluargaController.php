@@ -5,11 +5,9 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\AnggotaKeluarga;
 use frontend\models\AnggotaKeluargaSearch;
-use frontend\models\Keluarga;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\ArrayHelper;
 
 /**
  * AnggotaKeluargaController implements the CRUD actions for AnggotaKeluarga model.
@@ -65,24 +63,20 @@ class AnggotaKeluargaController extends Controller
      */
     public function actionCreate()
     {
-        $uid = Yii::$app->user->identity->id;
         $model = new AnggotaKeluarga();
-        $keluarga = ArrayHelper::map(
-            Keluarga::find()
-                ->select(['keluarga.kid', 'keluarga.nama_keluarga'])
-                ->leftJoin('user_keluarga', 'user_keluarga.kid = keluarga.kid')
-                ->where([
-                        'user_keluarga.user_id' => $uid,
-                    ])
-                ->all(), 'kid', 'nama_keluarga'
-        );
+        $user = Yii::$app->user->identity->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->uid = $user;
+            $model->nama_lengkap = $_POST['AnggotaKeluarga']['nama_lengkap'];
+            $model->tempat_lahir = $_POST['AnggotaKeluarga']['tempat_lahir'];
+            $model->tanggal_lahir = $_POST['AnggotaKeluarga']['tanggal_lahir'];
+            $model->save();
+    
             return $this->redirect(['view', 'id' => $model->aid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'keluarga' => $keluarga,
             ]);
         }
     }
@@ -95,23 +89,20 @@ class AnggotaKeluargaController extends Controller
      */
     public function actionUpdate($id)
     {
-        $uid = Yii::$app->user->identity->id;
         $model = $this->findModel($id);
-        $keluarga = ArrayHelper::map(
-            Keluarga::find()
-                ->select(['keluarga.kid', 'keluarga.nama_keluarga'])
-                ->leftJoin('user_keluarga', 'user_keluarga.kid = keluarga.kid')
-                ->where([
-                        'user_keluarga.user_id' => $uid,
-                    ])
-                ->all(), 'kid', 'nama_keluarga'
-        );
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $user = Yii::$app->user->identity->id;
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->uid = $user;
+            $model->nama_lengkap = $_POST['AnggotaKeluarga']['nama_lengkap'];
+            $model->tempat_lahir = $_POST['AnggotaKeluarga']['tempat_lahir'];
+            $model->tanggal_lahir = $_POST['AnggotaKeluarga']['tanggal_lahir'];
+            $model->update();
+
             return $this->redirect(['view', 'id' => $model->aid]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'keluarga' => $keluarga,
             ]);
         }
     }

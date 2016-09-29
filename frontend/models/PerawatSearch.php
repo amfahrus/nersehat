@@ -19,7 +19,8 @@ class PerawatSearch extends Perawat
     {
         return [
             [['pid'], 'integer'],
-            [['id_perawat', 'nama_perawat'], 'safe'],
+            [['id_perawat', 'nama_perawat', 'nomor_hp', 'layanan', 'agama', 'jenis_kelamin', 'penempatan'], 'safe'],
+            [['jaga_hari_ini'], 'boolean'],
         ];
     }
 
@@ -60,10 +61,16 @@ class PerawatSearch extends Perawat
         // grid filtering conditions
         $query->andFilterWhere([
             'pid' => $this->pid,
+            'jaga_hari_ini' => $this->jaga_hari_ini,
         ]);
 
         $query->andFilterWhere(['like', 'id_perawat', $this->id_perawat])
-            ->andFilterWhere(['like', 'nama_perawat', $this->nama_perawat]);
+            ->andFilterWhere(['like', 'nama_perawat', $this->nama_perawat])
+            ->andFilterWhere(['like', 'nomor_hp', $this->nomor_hp])
+            ->andFilterWhere(['like', 'layanan', $this->layanan])
+            ->andFilterWhere(['like', 'agama', $this->agama])
+            ->andFilterWhere(['like', 'jenis_kelamin', $this->jenis_kelamin])
+            ->andFilterWhere(['like', 'penempatan', $this->penempatan]);
 
         return $dataProvider;
     }

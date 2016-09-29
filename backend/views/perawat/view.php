@@ -31,6 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'pid',
             'id_perawat',
             'nama_perawat',
+            'nomor_hp',
+            'layanan',
+            'agama',
+            'jenis_kelamin',
+            'penempatan',
+            'jaga_hari_ini:boolean',
         ],
     ]) ?>
 

@@ -3,13 +3,11 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Keluarga;
 use backend\models\AnggotaKeluarga;
 use backend\models\AnggotaKeluargaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\ArrayHelper;
 
 /**
  * AnggotaKeluargaController implements the CRUD actions for AnggotaKeluarga model.
@@ -66,16 +64,12 @@ class AnggotaKeluargaController extends Controller
     public function actionCreate()
     {
         $model = new AnggotaKeluarga();
-        $keluarga = ArrayHelper::map(
-            Keluarga::find()->all(), 'kid', 'nama_keluarga'
-        );
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->aid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'keluarga' => $keluarga,
             ]);
         }
     }
@@ -89,16 +83,12 @@ class AnggotaKeluargaController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $keluarga = ArrayHelper::map(
-            Keluarga::find()->all(), 'kid', 'nama_keluarga'
-        );
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->aid]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'keluarga' => $keluarga,
             ]);
         }
     }

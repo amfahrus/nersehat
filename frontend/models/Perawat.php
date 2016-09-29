@@ -10,6 +10,12 @@ use Yii;
  * @property integer $pid
  * @property string $id_perawat
  * @property string $nama_perawat
+ * @property string $nomor_hp
+ * @property string $layanan
+ * @property string $agama
+ * @property string $jenis_kelamin
+ * @property string $penempatan
+ * @property boolean $jaga_hari_ini
  */
 class Perawat extends \yii\db\ActiveRecord
 {
@@ -27,8 +33,9 @@ class Perawat extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_perawat', 'nama_perawat'], 'required'],
-            [['id_perawat', 'nama_perawat'], 'string'],
+            [['id_perawat', 'nama_perawat', 'nomor_hp', 'layanan', 'agama', 'jenis_kelamin', 'penempatan'], 'required'],
+            [['id_perawat', 'nama_perawat', 'nomor_hp', 'layanan', 'agama', 'jenis_kelamin', 'penempatan'], 'string'],
+            [['jaga_hari_ini'], 'boolean'],
         ];
     }
 
@@ -41,6 +48,12 @@ class Perawat extends \yii\db\ActiveRecord
             'pid' => 'Pid',
             'id_perawat' => 'Id Perawat',
             'nama_perawat' => 'Nama Perawat',
+            'nomor_hp' => 'Nomor Hp',
+            'layanan' => 'Layanan',
+            'agama' => 'Agama',
+            'jenis_kelamin' => 'Jenis Kelamin',
+            'penempatan' => 'Penempatan',
+            'jaga_hari_ini' => 'Jaga Hari Ini',
         ];
     }
 }

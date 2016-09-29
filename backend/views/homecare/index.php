@@ -15,22 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Homecare', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            'jenis_perawatan',
             'tanggal',
             'jam',
-            'longitude',
-            'latitude',
-            // 'jenis_perawatan',
-            // 'klinik',
-            // 'rumah_sakit',
+            'lokasi',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
