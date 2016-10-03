@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'gambar',
             'judul',
-            'keterangan:ntext',
+            //'keterangan:ntext',
             // 'tanggal',
 
             [
