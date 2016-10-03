@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\Homecare */
 
 $this->title = $model->hid;
-$this->params['breadcrumbs'][] = ['label' => 'Homecares', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Homecare', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="homecare-view">

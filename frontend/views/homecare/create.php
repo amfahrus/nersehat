@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model frontend\models\Homecare */
 
 $this->title = 'Reservasi dan Janji';
-$this->params['breadcrumbs'][] = ['label' => 'Homecares', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Homecare', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="homecare-create">

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\AnggotaKeluarga */
 
 $this->title = $model->aid;
-$this->params['breadcrumbs'][] = ['label' => 'Anggota Keluargas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Anggota Keluarga', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="anggota-keluarga-view">

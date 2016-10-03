@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\Perawat */
 
 $this->title = $model->pid;
-$this->params['breadcrumbs'][] = ['label' => 'Perawats', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Perawat', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="perawat-view">

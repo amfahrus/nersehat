@@ -9,7 +9,7 @@ use yii\grid\GridView;
 /* @var $model frontend\models\Artikel */
 
 $this->title = $model->judul;
-$this->params['breadcrumbs'][] = ['label' => 'Artikels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Artikel', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="artikel-view">

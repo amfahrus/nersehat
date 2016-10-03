@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model frontend\models\AnggotaKeluarga */
 
 $this->title = 'Create Anggota Keluarga';
-$this->params['breadcrumbs'][] = ['label' => 'Anggota Keluargas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Anggota Keluarga', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="anggota-keluarga-create">

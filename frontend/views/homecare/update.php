@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model frontend\models\Homecare */
 
 $this->title = 'Update Homecare: ' . $model->hid;
-$this->params['breadcrumbs'][] = ['label' => 'Homecares', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Homecare', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->hid, 'url' => ['view', 'id' => $model->hid]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
