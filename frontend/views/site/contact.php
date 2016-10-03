@@ -15,7 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
     <h3>Today On Call</h3>
+
 	<div class="row">
+    <div class="col-md-8">
 		<?= GridView::widget([
             'dataProvider' => $dataProviderPerawat,
             //'filterModel' => $searchModelPerawat,
@@ -46,6 +48,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]); ?>
 	</div>
+
+<div class="col-md-4">
+
+<!--Chat button will appear here-->
+<div id="MyLiveChatContainer"></div>
+<!--Add the following script at the bottom of the web page (before </body></html>)-->
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatbutton.aspx?hccid=57575783"></script>
+
+</div>
+
+</div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
