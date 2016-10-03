@@ -39,30 +39,39 @@ $this->title = Yii::$app->name;
 				<div class="row">
 
 				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Keperawatan Keluarga</h3>
-				        <p><a href="keperawatan-keluarga" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
+				  	<div class="panel panel-info">
+					  <div class="panel-heading">Keperawatan Keluarga</div>
+					  <div class="panel-body">
+						<?= Html::img('@web/uploads/family.png',['class' => 'img-responsive']) ?>
+					  </div>
+  						<div class="panel-footer">
+  							<a href="keperawatan-keluarga" class="btn btn-primary" role="button">Detail</a>
+  						</div>
+					</div>
 				  </div>
 
 				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Keperawatan Anak</h3>
-				        <p><a href="keperawatan-anak" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
+				  	<div class="panel panel-info">
+					  <div class="panel-heading">Keperawatan Anak</div>
+					  <div class="panel-body">
+						<?= Html::img('@web/uploads/anak.png',['class' => 'img-responsive']) ?>
+					  </div>
+  						<div class="panel-footer">
+  							<a href="keperawatan-anak" class="btn btn-primary" role="button">Detail</a>
+  						</div>
+					</div>
 				  </div>
 
 				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Keperawatan Maternitas</h3>
-				        <p><a href="keperawatan-maternitas" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
+				  	<div class="panel panel-info">
+					  <div class="panel-heading">Keperawatan Maternitas</div>
+					  <div class="panel-body">
+						<?= Html::img('@web/uploads/maternitas.jpg',['class' => 'img-responsive']) ?>
+					  </div>
+  						<div class="panel-footer">
+  							<a href="keperawatan-maternitas" class="btn btn-primary" role="button">Detail</a>
+  						</div>
+					</div>
 				  </div>
 
 				</div>
@@ -70,21 +79,27 @@ $this->title = Yii::$app->name;
 				<div class="row">
 
 				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Keperawatan Lanjut Usia</h3>
-				        <p><a href="lanjut-usia" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
+				  	<div class="panel panel-info">
+					  <div class="panel-heading">Keperawatan Lanjut Usia</div>
+					  <div class="panel-body">
+						<?= Html::img('@web/uploads/lansia.png',['class' => 'img-responsive']) ?>
+					  </div>
+  						<div class="panel-footer">
+  							<a href="lanjut-usia" class="btn btn-primary" role="button">Detail</a>
+  						</div>
+					</div>
 				  </div>
 
 				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Keperawatan <br>Jiwa</h3>
-				        <p><a href="keperawatan-jiwa" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
+				  	<div class="panel panel-info">
+					  <div class="panel-heading">Keperawatan Jiwa</div>
+					  <div class="panel-body">
+						<?= Html::img('@web/uploads/jiwa.png',['class' => 'img-responsive']) ?>
+					  </div>
+  						<div class="panel-footer">
+  							<a href="keperawatan-jiwa" class="btn btn-primary" role="button">Detail</a>
+  						</div>
+					</div>
 				  </div>
 
 				</div>
