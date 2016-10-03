@@ -16,10 +16,8 @@ use yii\widgets\ActiveForm;
                         1 => 'Keperawatan Keluarga', 
                         2 => 'Keperawatan Anak', 
                         3 => 'Keperawatan Maternitas', 
-                        4 => 'Ibu Hamil dan  Menyusui',
-                        5 => 'Lanjut Usia',
+                        5 => 'Keperawatan Lanjut Usia',
                         6 => 'Keperawatan Jiwa',
-                        7 => 'Penyakit Kronis',
                     ]) ?>
 
     <?= $form->field($model, 'gambar')->textInput() ?>

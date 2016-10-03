@@ -72,16 +72,7 @@ $this->title = Yii::$app->name;
 				  <div class="col-sm-6 col-md-4">
 				    <div class="thumbnail">
 				      <div class="caption">
-				        <h3>Ibu Hamil dan Menyusui</h3>
-				        <p><a href="ibu-hamil-menyusui" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
-				  </div>
-
-				  <div class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Lanjut <br>Usia</h3>
+				        <h3>Keperawatan Lanjut Usia</h3>
 				        <p><a href="lanjut-usia" class="btn btn-primary" role="button">Detail</a></p>
 				      </div>
 				    </div>
@@ -92,19 +83,6 @@ $this->title = Yii::$app->name;
 				      <div class="caption">
 				        <h3>Keperawatan <br>Jiwa</h3>
 				        <p><a href="keperawatan-jiwa" class="btn btn-primary" role="button">Detail</a></p>
-				      </div>
-				    </div>
-				  </div>
-
-				</div>
-
-				<div class="row">
-
-				  <div class="col-sm-6 col-md-4 center-block">
-				    <div class="thumbnail">
-				      <div class="caption">
-				        <h3>Penyakit <br>Kronis</h3>
-				        <p><a href="penyakit-kronis" class="btn btn-primary" role="button">Detail</a></p>
 				      </div>
 				    </div>
 				  </div>
