@@ -51,6 +51,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="col-md-4">
 
+<h3>Customer Live Chat</h3>
+
 <!--Chat button will appear here-->
 <div id="MyLiveChatContainer"></div>
 <!--Add the following script at the bottom of the web page (before </body></html>)-->
