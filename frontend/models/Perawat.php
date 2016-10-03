@@ -52,7 +52,7 @@ class Perawat extends \yii\db\ActiveRecord
             'layanan' => 'Layanan',
             'agama' => 'Agama',
             'jenis_kelamin' => 'Jenis Kelamin',
-            'penempatan' => 'Penempatan',
+            'penempatan' => 'Hari',
             'jaga_hari_ini' => 'Jaga Hari Ini',
         ];
     }
