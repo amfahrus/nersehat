@@ -24,7 +24,7 @@ $this->title = Yii::$app->name;
 					    } else {
 					?>
 					  <a href="perawat" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Data Perawat</a>
-					  <a href="anggota-keluarga" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Data Kesehatan Keluarga</a>
+					  <a href="keluarga" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Data Kesehatan Keluarga</a>
 					  <a href="site/contact" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Pojok Konseling</a>
 					  <a href="homecare" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Reservasi dan Janji</a>
 					  <a href="site/about" class="list-group-item"><span class="glyphicon glyphicon-circle-arrow-right"></span> Tentang Kami</a>

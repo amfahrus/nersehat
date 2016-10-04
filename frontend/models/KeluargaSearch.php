@@ -5,12 +5,12 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\AnggotaKeluarga;
+use frontend\models\Keluarga;
 
 /**
- * AnggotaKeluargaSearch represents the model behind the search form about `frontend\models\AnggotaKeluarga`.
+ * KeluargaSearch represents the model behind the search form about `frontend\models\Keluarga`.
  */
-class AnggotaKeluargaSearch extends AnggotaKeluarga
+class KeluargaSearch extends Keluarga
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
     public function rules()
     {
         return [
-            [['aid', 'uid'], 'integer'],
-            [['nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'keluhan_sekarang', 'catatan_perkembangan'], 'safe'],
+            [['kid', 'uid'], 'integer'],
+            [['nama'], 'safe'],
         ];
     }
 
@@ -39,14 +39,10 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
      *
      * @return ActiveDataProvider
      */
-    public function search($params,$id)
+    public function search($params)
     {
         $user = Yii::$app->user->identity->id;
-        $query = AnggotaKeluarga::find()->where([
-          'and',
-          ['=','uid', $user],
-          ['=','kid', $id]
-          ]);
+        $query = Keluarga::find()->where(['=','uid',$user]);
 
         // add conditions that should always apply here
 
@@ -64,15 +60,11 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'aid' => $this->aid,
+            'kid' => $this->kid,
             'uid' => $this->uid,
-            'tanggal_lahir' => $this->tanggal_lahir,
         ]);
 
-        $query->andFilterWhere(['like', 'nama_lengkap', $this->nama_lengkap])
-            ->andFilterWhere(['like', 'tempat_lahir', $this->tempat_lahir])
-            ->andFilterWhere(['like', 'keluhan_sekarang', $this->keluhan_sekarang])
-            ->andFilterWhere(['like', 'catatan_perkembangan', $this->catatan_perkembangan]);
+        $query->andFilterWhere(['like', 'nama', $this->nama]);
 
         return $dataProvider;
     }

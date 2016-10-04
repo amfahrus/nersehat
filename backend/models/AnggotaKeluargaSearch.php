@@ -40,9 +40,9 @@ class AnggotaKeluargaSearch extends AnggotaKeluarga
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$id)
     {
-        $query = AnggotaKeluarga::find();
+        $query = AnggotaKeluarga::find()->where(['=','kid', $id]);
 
         $query->joinWith('u');
 
