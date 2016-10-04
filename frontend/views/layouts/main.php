@@ -36,11 +36,26 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/']],
+        ['label' => 'Data Perawat', 'url' => ['/perawat']],
+        ['label' => 'Pojok Konseling', 'url' => ['/site/contact']],
+        ['label' => 'Reservasi dan Janji', 'url' => ['/homecare']],
+        ['label' => 'Tentang Kami', 'url' => ['/site/about']],
+        [
+            'label' => 'Artikel',
+            'items' => [
+                 ['label' => 'Keperawatan Keluarga', 'url' => 'keperawatan-keluarga'],
+                 ['label' => 'Keperawatan Anak', 'url' => 'keperawatan-anak'],
+                 ['label' => 'Keperawatan Maternitas', 'url' => 'keperawatan-maternitas'],
+                 ['label' => 'Keperawatan Lanjut Usia', 'url' => 'lanjut-usia'],
+                 ['label' => 'Keperawatan Jiwa', 'url' => 'keperawatan-jiwa'],
+            ],
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Data Kesehatan Keluarga', 'url' => ['/anggota-keluarga']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
