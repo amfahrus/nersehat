@@ -84,7 +84,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">
-            <?= Html::img('@web/uploads/logo.png', ['alt'=>Yii::$app->name, 'width' => '18%', 'height' => '18%']) ?>
+            <?= Html::img('@web/uploads/logo.png', ['alt'=>Yii::$app->name, 'width' => '5%', 'height' => '5%']) ?>
             &copy; <?= Yii::$app->name.' '.date('Y') ?>
         </p>
 

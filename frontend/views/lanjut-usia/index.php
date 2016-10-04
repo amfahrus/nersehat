@@ -10,6 +10,26 @@ use yii\grid\GridView;
 $this->title = 'Artikel';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+body::before{
+     background: url('<?= Yii::getAlias('@web') ?>/uploads/bg.jpg');
+     content: '';
+    z-index: -1;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position:absolute; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+    }
+</style>
 <div class="artikel-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
