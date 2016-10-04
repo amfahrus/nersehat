@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Html::img('@web/uploads/logo.png', ['alt'=>Yii::$app->name, 'width' => '150%', 'height' => '150%']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -83,7 +83,10 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Yii::$app->name.' '.date('Y') ?></p>
+        <p class="pull-left">
+            <?= Html::img('@web/uploads/logo.png', ['alt'=>Yii::$app->name, 'width' => '18%', 'height' => '18%']) ?>
+            &copy; <?= Yii::$app->name.' '.date('Y') ?>
+        </p>
 
     </div>
 </footer>
