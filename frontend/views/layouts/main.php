@@ -21,6 +21,26 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>
+body::before{
+     background: url('<?= Yii::getAlias('@web') ?>/uploads/bg.jpg');
+     content: '';
+    z-index: -1;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position:absolute; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+    }
+</style>
 </head>
 <body>
 <?php $this->beginBody() ?>
