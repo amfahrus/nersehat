@@ -63,11 +63,11 @@ body::before{
         [
             'label' => 'Artikel',
             'items' => [
-                 ['label' => 'Keperawatan Keluarga', 'url' => 'keperawatan-keluarga'],
-                 ['label' => 'Keperawatan Anak', 'url' => 'keperawatan-anak'],
-                 ['label' => 'Keperawatan Maternitas', 'url' => 'keperawatan-maternitas'],
-                 ['label' => 'Keperawatan Lanjut Usia', 'url' => 'lanjut-usia'],
-                 ['label' => 'Keperawatan Jiwa', 'url' => 'keperawatan-jiwa'],
+                 ['label' => 'Keperawatan Keluarga', 'url' => '/keperawatan-keluarga'],
+                 ['label' => 'Keperawatan Anak', 'url' => '/keperawatan-anak'],
+                 ['label' => 'Keperawatan Maternitas', 'url' => '/keperawatan-maternitas'],
+                 ['label' => 'Keperawatan Lanjut Usia', 'url' => '/lanjut-usia'],
+                 ['label' => 'Keperawatan Jiwa', 'url' => '/keperawatan-jiwa'],
             ],
         ],
     ];
