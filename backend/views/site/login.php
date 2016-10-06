@@ -21,7 +21,7 @@ $fieldOptions2 = [
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><?= Html::img('@web/logo.png', ['alt'=>Yii::$app->name, 'style' => 'max-height: 100%;height: 100%;margin: 0 auto;']) ?></a>
+        <a href="#"><?= Html::img('@web/logo.png', ['alt'=>Yii::$app->name, 'style' => 'width: 25%;height: 20%;']) ?></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
